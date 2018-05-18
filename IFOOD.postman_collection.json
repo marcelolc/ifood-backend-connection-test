@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "70d2987c-4e42-4690-a266-e49a78e0ddce",
+		"name": "IFOOD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetRestaurant",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Marcelo\",\n\t\"lastName\":\"Cyreno\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/restaurant/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRestaurants",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Marcelo\",\n\t\"lastName\":\"Cyreno\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/restaurant?restaurantId=1&restaurantId=2&restaurantId=3&restaurantId=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"restaurant"
+					],
+					"query": [
+						{
+							"key": "restaurantId",
+							"value": "1"
+						},
+						{
+							"key": "restaurantId",
+							"value": "2"
+						},
+						{
+							"key": "restaurantId",
+							"value": "3"
+						},
+						{
+							"key": "restaurantId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRanking",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Marcelo\",\n\t\"lastName\":\"Cyreno\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ranking/2018-05-14?restaurantId=1&restaurantId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ranking",
+						"2018-05-14"
+					],
+					"query": [
+						{
+							"key": "restaurantId",
+							"value": "1"
+						},
+						{
+							"key": "restaurantId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRankingFull",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Marcelo\",\n\t\"lastName\":\"Cyreno\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ranking/2018-05-14?full=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ranking",
+						"2018-05-14"
+					],
+					"query": [
+						{
+							"key": "full",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListUnavailabilities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurantId\": 1,\n    \"reason\": \"Overloaded\",\n    \"start\": \"2018-05-17T13:15:30.00Z\",\n    \"end\": \"2018-05-17T15:15:30.00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/restaurant/1/unavailability/2018-05-15T17:15:30.00Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"1",
+						"unavailability",
+						"2018-05-15T17:15:30.00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListScheduledUnavailabilities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurantId\": 1,\n    \"reason\": \"Overloaded\",\n    \"start\": \"2018-05-17T13:15:30.00Z\",\n    \"end\": \"2018-05-17T15:15:30.00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/restaurant/1/scheduled-unavailability/2018-05-14T00:00:00.00Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"1",
+						"scheduled-unavailability",
+						"2018-05-14T00:00:00.00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveScheduledUnavailability",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"reason\": \"Overloaded\",\n    \"start\": \"2018-05-15T17:15:30.00Z\",\n    \"end\": \"2018-05-15T20:15:30.00Z\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/restaurant/1/scheduled-unavailability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"1",
+						"scheduled-unavailability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteScheduledUnavailability",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurantId\": 1,\n    \"start\": \"2018-05-17T13:15:30.00Z\",\n    \"end\": \"2018-05-17T15:15:30.00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/restaurant/1/scheduled-unavailability/9e2b07df-b82f-4dd5-bb08-97ab14fb91bf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"1",
+						"scheduled-unavailability",
+						"9e2b07df-b82f-4dd5-bb08-97ab14fb91bf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

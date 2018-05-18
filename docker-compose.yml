@@ -1,0 +1,17 @@
+#https://docs.docker.com/compose/overview/
+
+version: '3'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+  db:
+    image: postgres
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: ifood
+      POSTGRES_USER: ifood
+      POSTGRES_PASSWORD: ifood

@@ -1,0 +1,25 @@
+
+# DB Settings
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5434/ifood
+    username: ifood
+    password: ifood
+    initialization-mode: always
+  jpa:
+    # Values : validate | update | create | create-drop
+    hibernate.ddl-auto: update
+    # See: https://stackoverflow.com/questions/49110818/method-org-postgresql-jdbc-pgconnection-createclob-is-not-yet-implemented
+    properties.hibernate.jdbc.lob.non_contextual_creation: true
+
+
+#opening time / closing time
+keepalive:
+  openingTime: "10:00"
+  closingTime: "23:00"
+  ttlInSeconds: 30
+  receiver:
+    brokerUrl: tcp://localhost:1883
+    topic: ifood/keepalive
+    qos: 2
